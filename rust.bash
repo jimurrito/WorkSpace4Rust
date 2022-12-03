@@ -1,4 +1,3 @@
-#!/bin/sh
 
 # install dependancies
 apt install pkg-config openssl libssl-dev curl -y
