@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Install dep.
 apt install ca-certificates curl gnupg lsb-release apt-utils -y
 
@@ -15,6 +17,3 @@ apt update
 
 # Install Engine
 apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-
-# start docker
-#service docker start

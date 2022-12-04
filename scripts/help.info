@@ -1,0 +1,22 @@
+Workspace Shortcuts
+
+Usage: wksp [OPTION] [SUBCOMMANDS]
+wksp provides shortcuts to common actions needed during the lifecycle of your app's development.
+
+OPTIONS
+
+  -C,  --clear          Clears all containers and images from docker engine
+       --cleardocker
+  -i,  --install        Installs VsCode extensions into the server manually
+                            => Shortcut for code-server --install-extension
+                            => Takes Extension idenifier as SUBCOMMAND
+  -I,  --default        Installs the default VsCode extensions into the server
+  -g   --greeting       Enables or Disables the new cmd session greetings
+                            => Takes bool or int(0/1) to enable and disable
+                            => Defaults to 1 or "On" during the initial deployment
+  -v,  --version        Shows wksp and codeserver4rs build information
+  -h,  --help           Shows command arguments
+
+Any issues?
+Please submit a bug @ https://github.com/jimurrito/code-server4rs/issues
+

@@ -1,58 +1,50 @@
 # Docker Container for code-server4rs
 # sudo docker build -t jimurrito/code-server4rs:latest .
-
 FROM ubuntu:kinetic
-ENV VER=1.13.02
 
 # > ENV + ARGS
 # user config
+ENV VER=1.12.3
 ENV USER=root
 ENV PSWD=password
-
-# misc
-ENV SRVIP=10.3.10.20
-
-# Portainer ports
-ENV P9443=9443
-ENV P8000=8000
-
-# > Init
-# Update repos caches and packages
-RUN apt update && apt install --upgrade -y
-# Create directory for build scripts
-RUN mkdir /buildscripts
-WORKDIR /buildscripts
-
-# > Set user password
-ADD ./user.bash /buildscripts/.
-RUN bash ./user.bash
-# set as docker user
-USER ${USER}
-
-# > Set Setup SSH Server
-ADD ./ssh_config /buildscripts/.
-ADD ./ssh.bash /buildscripts/.
-RUN bash ./ssh.bash
-
-# > Install VsCode
-ADD ./vscode.bash /buildscripts/.
-RUN bash ./vscode.bash
+# build const
+ENV WRKSP=${HOME}/workspaces
+ENV KEYS=${HOME}/keys
+# Optional Extensions
+# Display Greeting
+# 0 = no | 1 = yes (Def)
+ENV SHOW_GREETING=1 
 # enable SSH port for VScode remoting
 EXPOSE 22
 
+# Update repos caches and packages
+RUN apt update && apt install --upgrade -y
+# Build Dirs
+RUN mkdir /buildscripts /wksp /vscodesrv /${WRKSP} ${KEYS}
+# Import build scripts
+ADD ./buildscripts /buildscripts
+WORKDIR /buildscripts
+
+# > Set user password
+RUN sh ./user.sh
+# set user
+USER ${USER}
+
+# > Set Setup SSH Server
+RUN sh ./ssh.sh
+# > Install VsCode
+RUN sh ./vscode.sh
+# > Install Python3-Pip
+RUN sh ./python.sh
 # > Install Rust
-ADD ./rust.bash /buildscripts/.
-RUN bash ./rust.bash
-
+RUN sh ./rust.sh
 # > Install Docker
-ADD ./docker.bash /buildscripts/.
-RUN bash ./docker.bash
+RUN sh ./docker.sh
+# > Install Misc.
+RUN apt install nano vim -y
 
-# > Run Portainer
-ADD ./portainer.bash /buildscripts/.
-#RUN bash ./portainer.bash
+# > Configure workspace commands
+ADD ./scripts /wksp
 
 # Entry point is running VScode server
-ADD ./startup.bash /buildscripts/.
-CMD bash ./startup.bash
-#CMD code-server --accept-server-license-terms serve
+CMD sh ./startup.sh
