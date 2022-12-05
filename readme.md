@@ -21,10 +21,10 @@ This is a remote VSCode server, that has tools pre-installed, that can assist in
 - Rust (cargo, rustup, etc)
 - Python3 & Pip
 - Docker
-- Custom shortcuts `*`
-- Optional set of default VSCode extensions `*`
+- Custom shortcuts *
+- Optional set of default VSCode extensions *
 
-## [`*`] WorkSpace Shortcuts (wksp)
+## [*] WorkSpace Shortcuts (wksp)
 Custom shortcuts for a combination of common tasks to help the lifecyle of app developement. 
 A primary case being: ' `wksp -C` '; When used, it removes all containers, and images from docker. Helping clear up a workspace mid-project.
 The default set of extensions can be installed with: ' `wksp -I` '.
@@ -56,13 +56,13 @@ docker run -it \
 1. Install the [Remote Explorer Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) in VSCode
 2. Select the Remote Explorer tab on the left-side bar
 3. Create a new host, using the IP and Port combination chosen for the conatiner
-4. Connect to the container and enter the password chosen in the docker run command issues. Default: ***password***
+4. Connect to the container and enter the password chosen in the docker run command issues. Default: `***password***`
    
    (OPTIONAL) Attach a filesystem to the /keys volume to get access to the generated SSH key.
 
 ---
 
-## Default Extensions [ ```~# wkps -I``` ] 
+## Default Extensions [ `wkps -I` ] 
 - [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 - [Docker Tools](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
@@ -75,7 +75,7 @@ docker run -it \
 ---
 
 ## Creating custom wksp commands
-   Open the ```/wksp/root.sh``` file via your chosen IDE
+   Open the `/wksp/root.sh` file via your chosen IDE
    ```sh
    nano /wksp/root.sh
    ```
@@ -104,9 +104,9 @@ docker run -it \
    elif [ "$1" = "--<long-arg>" ] || [ "$1" = "-<short-arg>" ]; then
        <EXECUTION_COMMAND>
    ```
-   - It's recommended to save the Command script to the ```/wksp``` directory.
+   - It's recommended to save the Command script to the `/wksp` directory.
    - Try and follow the cmd template above.
-   - Recommend to add your new cmd to ```/wksp/help.info```
+   - Recommend to add your new cmd to `/wksp/help.info`
    - If you create anything cool, please create a pull request. Always looking for more ways to improve the development of most applications. ❤️
 
 #
