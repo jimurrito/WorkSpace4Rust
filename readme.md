@@ -14,8 +14,6 @@ This is a remote VSCode server, that has tools pre-installed, that can assist in
 > - [Creating custom wksp commands](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#creating-custom-wksp-commands)
 > - [Links](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#links)
 
-#
-
 ## Components
 - Rust (cargo, rustup, etc)
 - Python3 & Pip
