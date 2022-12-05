@@ -6,14 +6,13 @@ This is a remote VSCode server, that has tools pre-installed, that can assist in
 <br>
 
 > ### Table of Contents
-> - [Components]()
-> - [Workspace Shortcuts (wksp)]()
-> - [Docker CLI]()
-> - [How to connect]()
-> - [Default Extensions]()
-> - [How to connect]()
-> - [Creating custom wksp commands]()
-> - [Links]()
+> - [Components](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#components)
+> - [Workspace Shortcuts (wksp)](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#-workspace-shortcuts-wksp)
+> - [Docker CLI](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#docker-cli-setup)
+> - [How to connect](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#how-to-connect)
+> - [Default Extensions](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#default-extensions--wkps--i-)
+> - [Creating custom wksp commands](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#creating-custom-wksp-commands)
+> - [Links](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#links)
 
 #
 
