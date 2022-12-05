@@ -27,7 +27,7 @@ elif [ "$1" = "--run" ] || [ "$1" = "--dockerrun" ] || [ "$1" = "-r" ]; then
     sh "$RPATH"rundocker.sh "$2" "$3"
 #
 # Clear docker command
-elif [ "$1" = "--clear" ] || [ "$1" = "--cleardocker" ] || [ "$1" = "-C" ]; then
+elif [ "$1" = "--clear" ] || [ "$1" = "--dockerclear" ] || [ "$1" = "-C" ]; then
     sh "$RPATH"cleardocker.sh
 #
 # Install a VSCode extension
@@ -40,7 +40,7 @@ elif [ "$1" = "--default" ] || [ "$1" = "-I" ]; then
 #
 # Edits Root.sh for new commands
 elif [ "$1" = "--newcmd" ] || [ "$1" = "-N" ]; then
-    sh newcmd.sh "$2"
+    sh "$RPATH"newcmd.sh "$2"
 #
 # ---------------------------------
 # [[[ CUSTOM COMMANDS ]]]

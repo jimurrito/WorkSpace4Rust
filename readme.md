@@ -6,13 +6,13 @@ This is a remote VSCode server, that has tools pre-installed, that can assist in
 <br>
 
 > ### Table of Contents
-> - [Components](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#components)
-> - [Workspace Shortcuts (wksp)](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#-workspace-shortcuts-wksp)
-> - [Docker CLI](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#docker-cli-setup)
-> - [How to connect](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#how-to-connect)
-> - [Default Extensions](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#default-extensions--wkps--i-)
-> - [Creating custom wksp commands](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#creating-custom-wksp-commands)
-> - [Links](https://github.com/jimurrito/code-server4rs/edit/master/readme.md#links)
+> - [Components](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#components)
+> - [Workspace Shortcuts (wksp)](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#-workspace-shortcuts-wksp)
+> - [Docker CLI](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#docker-cli-setup)
+> - [How to connect](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#how-to-connect)
+> - [Default Extensions](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#default-extensions--wkps--i-)
+> - [Creating custom wksp commands](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#creating-custom-wksp-commands)
+> - [Links](https://github.com/jimurrito/workspace4rs/edit/master/readme.md#links)
 
 #
 
@@ -116,4 +116,4 @@ docker run -it \
 
 #
 
-If you run into any problems, or just have a question. Please submit an issue @ https://github.com/jimurrito/code-server4rs/issues
+If you run into any problems, or just have a question. Please submit an issue @ https://github.com/jimurrito/workspace4rs/issues

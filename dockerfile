@@ -1,10 +1,11 @@
-# Docker Container for code-server4rs
+# Docker Container for workspace4rs
 # sudo docker build -t jimurrito/workspace4rs:latest .
 FROM ubuntu:kinetic
 #
 # > ENV + ARGS
 # user config
 ENV VER=1.12.4
+# Allow setting custom user. User is just root renamed to that user provided name. Default should be 'dev'
 ENV USER=root
 ARG PSWD=password
 ENV PSWD=${PSWD}
@@ -22,7 +23,7 @@ EXPOSE 22
 # Update repos caches and packages
 RUN apt update && apt install --upgrade -y
 # Build Dirs
-RUN mkdir /buildscripts /wksp /wksplogs ${WORKSPACE_DIR} ${KEYS_DIR}
+RUN mkdir /buildscripts /wksp /wksplogs
 # Import build scripts
 ADD ./buildscripts /buildscripts
 WORKDIR /buildscripts

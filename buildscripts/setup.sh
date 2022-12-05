@@ -5,10 +5,13 @@
 # > Set wksp commands alias
 echo 'alias wksp="sh /wksp/root.sh"' >> ~/.bashrc
 #
+# > Create volumes
+mkdir ~/workspaces ~/keys 2> /dev/null
+#
 # > Copy prv SSH key to user-accessible dir
-cp -v "$HOME"/.ssh/sshkey "$KEYS_DIR"/sshkey
+cp -v ~/.ssh/sshkey ~/keys/sshkey
 #
 # > Soft link for volumes
-ln -s "$KEYS_DIR" /keys
-ln -s "$WORKSPACE_DIR" /workspaces
+ln -s ~/keys /keys  2> /dev/null
+ln -s ~/workspaces /workspaces  2> /dev/null
 #
