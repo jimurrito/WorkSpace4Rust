@@ -69,7 +69,7 @@ docker run -it \
 - [Shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Python-tools](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [VS Code Counter]([Python-tools](https://marketplace.visualstudio.com/items?itemName=ms-python.python))
+- [VS Code Counter](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter)
 
 ---
 
