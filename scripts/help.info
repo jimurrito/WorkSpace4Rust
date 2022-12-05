@@ -5,15 +5,25 @@ wksp provides shortcuts to common actions needed during the lifecycle of your ap
 
 OPTIONS
 
+
+  -l   --clist          List docker conatiners
+       --dockerclist        => Takes optional "-a/--all" SUBCOMMAND
+  -L   --ilist          List docker images
+       --dockerilist
+  -b   --build          Builds a docker container
+       --dockerbuild        => Takes 2 SUBCOMMANDS
+                            => wksp -B "<(Req)dockertag>" "<(Opt)dockerfile_path>"
+  -r   --run            Runs a single container
+       --dockerrun          => Takes 2 SUBCOMMANDS
+                            => wksp -R "<(Req)dockertag>" "<(Opt)containername>"
   -C,  --clear          Clears all containers and images from docker engine
-       --cleardocker
+       --dockerclear        
   -i,  --install        Installs VsCode extensions into the server manually
                             => Shortcut for code-server --install-extension
                             => Takes Extension idenifier as SUBCOMMAND
   -I,  --default        Installs the default VsCode extensions into the server
-  -g   --greeting       Enables or Disables the new cmd session greetings
-                            => Takes bool or int(0/1) to enable and disable
-                            => Defaults to 1 or "On" during the initial deployment
+  -N,  --newcmd         Opens /wksp/root.sh to add new commands
+                            => Takes desired IDE as SUBCOMMAND (Default is nano)
   -v,  --version        Shows wksp and codeserver4rs build information
   -h,  --help           Shows command arguments
 

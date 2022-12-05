@@ -1,35 +1,37 @@
 # Docker Container for code-server4rs
-# sudo docker build -t jimurrito/code-server4rs:latest .
+# sudo docker build -t jimurrito/workspace4rs:latest .
 FROM ubuntu:kinetic
-
+#
 # > ENV + ARGS
 # user config
-ENV VER=1.12.3
+ENV VER=1.12.4
 ENV USER=root
-ENV PSWD=password
+ARG PSWD=password
+ENV PSWD=${PSWD}
 # build const
-ENV WRKSP=${HOME}/workspaces
-ENV KEYS=${HOME}/keys
+ENV WORKSPACE_DIR=${HOME}/workspaces
+ENV KEYS_DIR=${HOME}/keys
 # Optional Extensions
 # Display Greeting
 # 0 = no | 1 = yes (Def)
-ENV SHOW_GREETING=1 
+ARG SHOW_GREETING=1
+ENV SHOW_GREETING=${SHOW_GREETING}
 # enable SSH port for VScode remoting
 EXPOSE 22
-
+#
 # Update repos caches and packages
 RUN apt update && apt install --upgrade -y
 # Build Dirs
-RUN mkdir /buildscripts /wksp /vscodesrv /${WRKSP} ${KEYS}
+RUN mkdir /buildscripts /wksp /wksplogs ${WORKSPACE_DIR} ${KEYS_DIR}
 # Import build scripts
 ADD ./buildscripts /buildscripts
 WORKDIR /buildscripts
-
+#
 # > Set user password
 RUN sh ./user.sh
-# set user
+# > Set user
 USER ${USER}
-
+#
 # > Set Setup SSH Server
 RUN sh ./ssh.sh
 # > Install VsCode
@@ -42,9 +44,12 @@ RUN sh ./rust.sh
 RUN sh ./docker.sh
 # > Install Misc.
 RUN apt install nano vim -y
-
+#
 # > Configure workspace commands
 ADD ./scripts /wksp
-
+#
+# > Final Setup
+RUN sh ./setup.sh
+#
 # Entry point is running VScode server
 CMD sh ./startup.sh
