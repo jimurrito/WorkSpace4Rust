@@ -30,7 +30,7 @@ The default set of extensions can be installed with: `wksp -I`.
 
 ---
 
-## Docker CLI Setup
+## [Docker CLI Setup](https://hub.docker.com/repository/docker/jimurrito/workspace4rs)
 ```docker
 docker run -it \
     # *Required*
@@ -111,8 +111,8 @@ docker run -it \
 #
 
 ## Links
-- [Github repo]()
-- [Docker Hub]()
+- [Github repo](https://github.com/jimurrito/workspace4rs)
+- [Docker Hub](https://hub.docker.com/repository/docker/jimurrito/workspace4rs)
 
 #
 
