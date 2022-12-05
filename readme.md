@@ -25,8 +25,8 @@ This is a remote VSCode server, that has tools pre-installed, that can assist in
 
 ## [*] WorkSpace Shortcuts (wksp)
 Custom shortcuts for a combination of common tasks to help the lifecyle of app developement. 
-A primary case being: ' `wksp -C` '; When used, it removes all containers, and images from docker. Helping clear up a workspace mid-project.
-The default set of extensions can be installed with: ' `wksp -I` '.
+A primary case being: `wksp -C`; When used, it removes all containers, and images from docker. Helping clear up a workspace mid-project.
+The default set of extensions can be installed with: `wksp -I`.
 
 ---
 
@@ -55,7 +55,7 @@ docker run -it \
 1. Install the [Remote Explorer Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) in VSCode
 2. Select the Remote Explorer tab on the left-side bar
 3. Create a new host, using the IP and Port combination chosen for the conatiner
-4. Connect to the container and enter the password chosen in the docker run command issues. Default: `***password***`
+4. Connect to the container and enter the password chosen in the docker run command issues. Default: `password`
    
    (OPTIONAL) Attach a filesystem to the /keys volume to get access to the generated SSH key.
 
@@ -82,7 +82,7 @@ docker run -it \
    
    By using this command built into wksp
    ```sh
-   wksp -N <(Opt)IDE> # Default IDE is nano
+   wksp -N "<(Opt)IDE>" # Default IDE is nano
    ```
    Then navigate down to line '45', and create your new commands.
    ```sh
