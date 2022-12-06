@@ -48,5 +48,8 @@ ADD ./scripts /wksp
 # > Final Setup
 RUN sh ./setup.sh
 #
+# > Volume for docker config
+VOLUME [ "/var/lib/docker" ]
+#
 # Entry point is running VScode server
 CMD sh ./startup.sh
