@@ -4,19 +4,15 @@ FROM ubuntu:kinetic
 #
 # > ENV + ARGS
 # user config
-ENV VER=1.12.4
+ENV VER=1.12.5
 # Allow setting custom user. User is just root renamed to that user provided name. Default should be 'dev'
-ENV USER=root
+ARG USER=root
+ENV USER=${USER}
 ARG PSWD=password
 ENV PSWD=${PSWD}
 # build const
 ENV WORKSPACE_DIR=${HOME}/workspaces
 ENV KEYS_DIR=${HOME}/keys
-# Optional Extensions
-# Display Greeting
-# 0 = no | 1 = yes (Def)
-ARG SHOW_GREETING=1
-ENV SHOW_GREETING=${SHOW_GREETING}
 # enable SSH port for VScode remoting
 EXPOSE 22
 #

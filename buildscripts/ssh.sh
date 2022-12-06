@@ -10,4 +10,4 @@ systemctl enable ssh
 cp -v ./ssh_config.txt /etc/ssh/sshd_config
 
 # Generate SSH key
-ssh-keygen -f "$HOME"/.ssh/sshkey -t rsa -b 4096 -N "$PSWD"
+ssh-keygen -f ~/.ssh/sshkey -t rsa -b 4096 -N "$PSWD"
