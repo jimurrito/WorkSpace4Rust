@@ -4,7 +4,7 @@
 # mainly adding settings to ~/.bashrc
 #
 # > Set env vars to be persistent
-{ echo "export VER='$VER'"; echo "export LC_CTYPE=en_US.UTF-8"; } >> ~/.bashrc # echo "export LC_ALL=en_US.UTF-8"; Removed
+{ echo "export VER='$VER'"; } >> ~/.bashrc # echo "echo "export LC_CTYPE=en_US.UTF-8"; export LC_ALL=en_US.UTF-8"; Removed
 #
 # > Set wksp commands alias
 echo 'alias wksp="sh /wksp/root.sh"' >> ~/.bashrc

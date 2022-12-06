@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # > Start critical services
-service docker start
+service docker start 2> /dev/null
 service ssh start
 #
 # start vs code
