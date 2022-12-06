@@ -44,8 +44,6 @@ docker run -itd \
     # *Required*
     # Port for SSH
     -p <hostport>:22 \
-    # Pull mounted cgroups from host (4 Docker)
-    -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
     # *OPTIONAL*
     # SSH Private-key dump location (Recommended)
     -v <dir-2-keys>:/keys \
