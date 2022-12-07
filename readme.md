@@ -2,7 +2,7 @@
 
 ### VS Code-Server pre-configured for Rust development
 
-This is a remote VS Code server, that has tools pre-installed, that can assist in the development of Rust or Non-Rust applications. 🦀
+This is a remote VS Code server, that has tools pre-installed, that can assist in the development of Rust and Non-Rust applications. 🦀
 
 <br>
 
@@ -31,9 +31,13 @@ Custom shortcuts for a combination of common tasks to help the lifecyle of app d
 A primary case being: `wksp -C`; When used, it removes all containers, and images from docker. Helping clear up a workspace mid-project.
 The default set of extensions can be installed with: `wksp -I`.
 
-## SSH-Key dump
+**Deprecated** ~~## SSH-Key dump~~
 
-By default, the container will generate an SSH key pair. When the user session starts, i.e the user signs into the server via SSH or VS Code, the server will copy the private key, into the `/keys` directory. If `/keys` is bound to the host via `-v`. This key can be added to your desktop to allow for seamless signon into the workspace. As of now, the password of the SSH key, is the same one set for the user.
+~~By default, the container will generate an SSH key pair. When the user session starts, i.e the user signs into the server via SSH or VS Code, the server will copy the private key, into the `/keys` directory. If `/keys` is bound to the host via `-v`. This key can be added to your desktop to allow for seamless signon into the workspace. As of now, the password of the SSH key, is the same one set for the user.~~
+
+### Change to SSH behavior v1.12.6 => v1.12.7
+
+In v1.12.7, an SSH private key is no longer generated and provided by the service. [A public key is now provided to the workspace instead.]()
 
 ---
 
@@ -45,12 +49,18 @@ docker run -itd \
     # Port for SSH
     -p <hostport>:22 \
     # *OPTIONAL*
-    # SSH Private-key dump location (Recommended)
+    # SSH Public-key dump location (Recommended)
     -v <dir-2-keys>:/keys \
     # Workspaces location
     -v <dir-2-wksp>:/workspaces \
     # Password for remote connection and root user
     -e PSWD="<password>" \
+    # Git config for workspace
+    # user.name
+    -e "GIT_USER_NAME"="ferris" \
+    # user.email
+    -e "GIT_USER_EMAIL"="ferris@email.com" \
+    #
     jimurrito/ionupdate_rs:latest
 
 ```
@@ -62,9 +72,11 @@ docker run -itd \
 1. Install the [Remote Explorer Extension](<https://marketplace.visualstudio.com/items?itemName=ms-VS> Code-remote.remote-ssh) in VS Code
 2. Select the Remote Explorer tab on the left-side bar
 3. Create a new host, using the IP and Port combination chosen for the conatiner
-4. Connect to the container and enter the password chosen in the docker run command issues. Default: `password`
+4. Connect to the container and enter the password chosen in the docker run command issues. Default: `ferris`
 
-   (OPTIONAL) Attach a filesystem to the /keys volume to get access to the generated SSH key.
+### SSH (Optional)
+
+   Attach a local filesystem to the `/keys` volume, to get access to the `~/.ssh` directory for your workspace user. Dropping a public SSH key into this directory will allow you to seamlessly signon with the private key from the pair.
 
 ---
 

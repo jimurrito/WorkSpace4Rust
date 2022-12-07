@@ -4,12 +4,17 @@ FROM ubuntu:kinetic
 #
 # > ENV + ARGS
 # user config
-ENV VER=1.12.5
+ENV VER=1.12.7
 # Allow setting custom user. User is just root renamed to that user provided name. Default should be 'dev'
 ARG USER=root
 ENV USER=${USER}
-ARG PSWD=password
+ARG PSWD=ferris
 ENV PSWD=${PSWD}
+# OPTIONAL Git user and email input
+ARG GIT_USER_NAME=""
+ENV GIT_USER_NAME=${GIT_USER_NAME}
+ARG GIT_USER_EMAIL=""
+ENV GIT_USER_EMAIL=${GIT_USER_EMAIL}
 # build const
 ENV WORKSPACE_DIR=${HOME}/workspaces
 ENV KEYS_DIR=${HOME}/keys
@@ -50,6 +55,10 @@ RUN sh ./setup.sh
 #
 # > Volume for docker config
 VOLUME [ "/var/lib/docker" ]
+# > Volume for Workspace share
+VOLUME [ "/workspace" ]
+# > Volume for keys share
+VOLUME [ "/keys" ]
 #
 # Entry point is running VScode server
 CMD sh ./startup.sh
