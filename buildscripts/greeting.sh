@@ -1,6 +1,5 @@
 #!/bin/sh
 #
-# only display if greets are enabled
 #
 # Greeting
 # Logic forces welcome message to run only once.

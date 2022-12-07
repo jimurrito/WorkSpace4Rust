@@ -3,9 +3,8 @@
 FROM ubuntu:kinetic
 #
 # > ENV + ARGS
-# user config
 ENV VER=1.12.7
-# Allow setting custom user. User is just root renamed to that user provided name. Default should be 'dev'
+# user config
 ARG USER=root
 ENV USER=${USER}
 ARG PSWD=ferris
