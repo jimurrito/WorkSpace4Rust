@@ -31,13 +31,13 @@ Custom shortcuts for a combination of common tasks to help the lifecyle of app d
 A primary case being: `wksp -C`; When used, it removes all containers, and images from docker. Helping clear up a workspace mid-project.
 The default set of extensions can be installed with: `wksp -I`.
 
-**Deprecated** ~~## SSH-Key dump~~
+**Deprecated** ~~SSH-Key dump~~
 
 ~~By default, the container will generate an SSH key pair. When the user session starts, i.e the user signs into the server via SSH or VS Code, the server will copy the private key, into the `/keys` directory. If `/keys` is bound to the host via `-v`. This key can be added to your desktop to allow for seamless signon into the workspace. As of now, the password of the SSH key, is the same one set for the user.~~
 
 ### Change to SSH behavior v1.12.6 => v1.12.7
 
-In v1.12.7, an SSH private key is no longer generated and provided by the service. [A public key is now provided to the workspace instead.]()
+In v1.12.7, an SSH private key is no longer generated and provided by the service. [A public key is now provided to the workspace instead.](https://github.com/jimurrito/workspace4rs#change-to-ssh-behavior-v1126--v1127)
 
 ---
 
