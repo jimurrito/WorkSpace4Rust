@@ -8,6 +8,7 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ -z "$1" ]; then
 #
 # Show version dump
 elif [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
+    printf "Workspace for Rust (workspace4rs)\nVersion $VER\n"
     cat "$RPATH"version.info
 #
 # list docker conatiners command

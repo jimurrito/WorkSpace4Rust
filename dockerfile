@@ -3,12 +3,16 @@
 FROM ubuntu:kinetic
 #
 # > ENV + ARGS
-ENV VER=1.12.7
+ENV VER=1.12.8
 # user config
-ARG USER=root
-ENV USER=${USER}
+#ARG USER=root # custom user will be fixed in the future
+#ENV USER=${USER}
+ENV USER=root
 ARG PSWD=ferris
 ENV PSWD=${PSWD}
+# OPTIONAL setting for default VS Code extensions (NOT WORKING)
+#ARG DEFAULT_VSC_EXT=1
+#ENV DEFAULT_VSC_EXT=${DEFAULT_VSC_EXT}
 # OPTIONAL Git user and email input
 ARG GIT_USER_NAME=""
 ENV GIT_USER_NAME=${GIT_USER_NAME}

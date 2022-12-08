@@ -12,5 +12,5 @@ EXTS=("rust-lang.rust-analyzer"
 echo "Installing Default Server-side VSCode extensions"
 #
 for i in "${EXTS[@]}"; do
-    code --force --install-extension "$i"
+    code --force --install-extension "$i" 0>&1 1> /dev/null # pass both info and success output to null. Only errors will be provided
 done
