@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 EXTS=("rust-lang.rust-analyzer" 
 "ms-azuretools.vscode-docker" 
