@@ -19,4 +19,4 @@ echo "$USER:$PSWD" | chpasswd
 echo 'sh /buildscripts/greeting_b.sh' >> ~/.bashrc
 #
 # set per-login greeting for user
-echo 'sh /buildscripts/greeting_p.sh' >> ~/.profile
+#echo 'sh /buildscripts/greeting_p.sh' >> ~/.profile

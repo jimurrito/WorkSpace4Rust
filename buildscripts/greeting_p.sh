@@ -10,7 +10,7 @@ if [ $DEFAULT_VSC_EXT -eq 1 ] || [ "$DEFAULT_VSC_EXT" = "1" ]; then
     export DEFAULT_VSC_EXT=0
 fi
 # install extentsions temp
-bash /buildscripts/ext.bash
+#bash /buildscripts/ext.bash
 # FUTURE MSG(s)
 # - Active Docker container count
 # - size of images (GBs)
