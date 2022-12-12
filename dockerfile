@@ -3,7 +3,7 @@
 FROM ubuntu:kinetic
 #
 # > ENV + ARGS
-ENV VER=1.12.8
+ENV VER=1.2.221211
 # user config
 #ARG USER=root # custom user will be fixed in the future
 #ENV USER=${USER}

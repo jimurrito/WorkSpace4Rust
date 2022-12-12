@@ -78,6 +78,9 @@ docker run -itd \
 
    Attach a local filesystem to the `/keys` volume, to get access to the `~/.ssh` directory for your workspace user. Dropping a public SSH key into this directory will allow you to seamlessly signon with the private key from the pair.
 
+   > Note: <br>
+   > If there us no pre-existing `authorized_hosts` file within the `/keys` or `~/.ssh` directory. Run `copy-ssh-id`, with the proper login and path information.This not only copies the SSH private key specified as an argument, but generates the `authorized_hosts` file for you.
+
 ---
 
 ## Default Extensions [ `wkps -I` ]

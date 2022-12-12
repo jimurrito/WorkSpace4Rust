@@ -13,3 +13,5 @@ fi
 # wksp reminder
 echo "Type 'wksp' to view the shortcuts built into this workspace"
 #
+# Reload ensure docker is started on new session
+service docker start > /dev/null
